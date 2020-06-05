@@ -1,3 +1,4 @@
+// C. Johnny and Another Rating Drop ( Codeforces Round #647 (Div. 2) )
 // Concept used: bitmask, precomputation
 // 'By Anki'
  
