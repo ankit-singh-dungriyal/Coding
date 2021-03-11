@@ -2,6 +2,31 @@ class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
         
+        unordered_map<int,int>m;
+        for(int x:nums)m[x]=1;
+        int ans=0,tmp=1;
+        for(int x:nums){
+            if(!m[x-1]){
+                int val=x;
+                tmp=1;
+                while(m[++val])tmp++;
+                ans=max(ans,tmp);
+            }
+        }
+        return ans;
+        
+    }
+};
+
+
+
+
+/*
+
+class Solution {
+public:
+    int longestConsecutive(vector<int>& nums) {
+        
         if(nums.size()==0)return 0;
         set<int>s;
         for(auto x:nums)s.insert(x);
@@ -17,3 +42,5 @@ public:
         
     }
 };
+
+*/
