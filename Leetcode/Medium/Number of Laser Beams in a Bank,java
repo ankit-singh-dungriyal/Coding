@@ -1,0 +1,18 @@
+class Solution {
+    public int numberOfBeams(String[] bank) {
+        int c1=0,c2=0;
+        int ans = 0;
+        for(String str: bank){
+            int cn=0;
+            for(char ch: str.toCharArray())cn=(ch=='1')?cn+1:cn;
+            if(c1==0)c1=cn;
+            else c2=cn;
+            if(c2!=0){
+                ans+=c1*c2;
+                c1=c2;
+                c2=0;
+            }
+        }
+        return ans;
+    }
+}
